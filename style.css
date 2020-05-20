@@ -1,35 +1,105 @@
-body{
-    background-color: green;
-    text-align: center;
-    font-size: 30px;
-    font-weight: lighter;
-    font-family: 'Times New Roman', Times, serif;
+@import url('https://fonts.googleapis.com/css2?family=poppins:wgth@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+img{
+    height: 252px;
+    width: 260px;
+    filter: grayscale(35%);
 }
 
-button{
-    border-radius: 50px;
-    border: 10px;
-    color: rgb(116, 160, 95);
-    background-color: black;
-    padding: 20px;
-    margin: 10px;
-    height: 100px;
-    width: 100px;
-    font-size: 40px;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #16384c;
 }
-    
-#add{
-    margin-right: 200px;
-    margin-bottom: 200px;
+.container{
+    margin-top: 150px;
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
 }
-#min{
-    margin-left: 200px;
+.container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: linear-gradient(45deg,seagreen,darkcyan);
+    margin: 30px 15px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: 1s ease-in-out;
+    border-radius: 20px;
+  
 }
-a{
-    font-family: cursive;
-    font-size: 25px;
-    color: yellowgreen;
+.container .card:hover
+{
+    height: 430px;
+    background: black;
+    border-radius: 210px;
 }
-p{
-    font-size: 50px;
+
+
+.container .card .imgBx{
+    position: relative;
+    max-width: 260px;
+    height: 252px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+}
+
+
+.container .card .imgBx img
+{
+    max-width: 100%;
+    border-radius: 20px;
+    transition: 1.4s ease-in-out;
+
+}
+.container .card:hover .imgBx img{
+    border-radius: 130px;
+    transition: 1.4s ease-in-out;
+    filter: grayscale(0%) ,brightness(200%);
+    animation-name: spin;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@Keyframes spin{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(10deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(-10deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.container .card .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color:white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
 }
